@@ -1,26 +1,27 @@
 window.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById("calc-form");
-  if (form) {
-    setupIntialValues();
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-      update();
-    });
-  }
+	const form = document.getElementById("calc-form");
+	if (form) {
+		setupIntialValues();
+		form.addEventListener("submit", function(e) {
+		e.preventDefault();
+		update();
+		});
+	}
 });
 
 function getCurrentUIValues() {
-  return {
-    amount: +(document.getElementById("loan-amount").value),
-    years: +(document.getElementById("loan-years").value),
-    rate: +(document.getElementById("loan-rate").value),
-  }
+	return {
+		amount: +(document.getElementById("loan-amount").value),
+		years: +(document.getElementById("loan-years").value),
+		rate: +(document.getElementById("loan-rate").value),
+	}
 }
 
 // Get the inputs from the DOM.
 // Put some default values in the inputs
 // Call a function to calculate the current monthly payment
 function setupIntialValues() {
+
 }
 
 // Get the current values from the UI
