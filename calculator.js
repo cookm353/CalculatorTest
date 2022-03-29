@@ -60,11 +60,20 @@ function update() {
 function calculateMonthlyPayment(values) {
 	const { amount, years, rate } = values
 
-	let numerator = amount * rate / 12
-	let denominator = 1 - (1 + rate / 12) ** -(years * 12)
-	let monthly = `$${(numerator/denominator).toFixed(2)}`
+	if (isFinite(amount) && isFinite(years) && isFinite(rate)) {
+		let numerator = amount * rate / 12
+		let denominator = 1 - (1 + rate / 12) ** -(years * 12)
+		let monthly = `$${(numerator/denominator).toFixed(2)}`
+	
+		return(monthly)
+	} else if (!isFinite(amount)) {
+		return("Invalid loan amount.")
+	} else if (!isFinite(years)) {
+		return("Invalid loan term.")
+	} else {
+		return("Invalid interest rate.")
+	}
 
-	return(monthly)
 
 }
 

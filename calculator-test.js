@@ -4,7 +4,7 @@ it('should calculate the monthly rate correctly', function () {
 });
 
 it("should return a result with 2 decimal places", function() {
-	let values = { amount: 20, years: 5, rate: .1}
+	let values = { amount: 25000, years: 5, rate: .1}
 	let decimalRegex = new RegExp("\.[0-9][0-9]$")
 	expect(calculateMonthlyPayment(values)).toMatch(decimalRegex)
 });
@@ -28,4 +28,3 @@ it("should handle low principles", function() {
 	let values = { amount: 250, years: 5, rate: .1}
 	expect(calculateMonthlyPayment(values)).toEqual("$5.31")
 })
-// etc
